@@ -1,51 +1,53 @@
-<template name="clientSurvey">
-  <form>
-
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title></title>
+  <script src="Scripts/jquery-2.1.1.min.js"></script>
+  <script src="Scripts/clientSurvey.js"></script>
+</head>
+<body>
+  <form role="form" class="container-fluid">
     <div id="clientId" hidden></div>
-
     <div id="date"></div>
-
-    <div id="divFeeling" class="well">
-      <label for="feeling">How are you feeling today?</label>
+    <div class="form-group" id="divFeeling">
+      <label for="feeling">
+        How are you feeling today?
+      </label>
       <div>
-        {{#each feeling}}
-        <input type="radio" name="feeling" value="{{this.value}}"/>{{this.display}}<br/>
-        {{/each}}
+        <input type="radio" name="feeling" value="0" />
+        <input type="radio" name="feeling" value="1" />
+        <input type="radio" name="feeling" value="2" />
+        <input type="radio" name="feeling" value="3" />
       </div>
     </div>
-
-    <div id="divSadList" class="sad well" hidden>
+    <div id="divSadList" class="sad form-group" hidden>
       <div>
         <label>
-          What are you sad about?
+          Are you sad about
         </label>
         <div>
-          {{#each sadValues}}
-          <input type="checkbox" value="{{this}}"/>{{this}}<br/>
-          {{/each}}
+          <input type="checkbox" value="family" />  <br />
+          <input type="checkbox" value="" />  <br />
+          <input type="checkbox" value="" />  <br />
+          <input type="checkbox" value="" />  <br />
         </div>
       </div>
     </div>
-
-    <div id="divSadReason" class="sad well" hidden>
+    <div id="divSadReason" class="sad form-group" hidden>
       <div>
         <label for="reason">Why?</label>
         <textarea id="reason"></textarea>
       </div>
     </div>
-
-    <div id="divQuestion" class="sad well" hidden>
+    <div id="divQuestion" class="sad form-group" hidden>
       Have you asked....
     </div>
-
-    <div id="divHappyComment" class="happy well" hidden>
+    <div id="divHappyComment" class="happy form-group" hidden>
       <div>
         <label for="comment">Comment</label>
         <textarea id="comment"></textarea>
       </div>
     </div>
-
-    <input type="submit" name="name" value="Submit" hidden/>
-
+    <input type="submit" name="name" value="Submit" class="btn btn-primary" hidden />
   </form>
-</template>
+</body>
+</html>
