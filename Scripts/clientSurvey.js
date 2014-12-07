@@ -5,7 +5,12 @@
   };
 
   $("form input[type='radio']").on("click", function () {
-    survey.feeling = $("form input[type='radio']:checked").val();
+    var feeling = $("form input[type='radio']:checked").val();
+    if (survey.feeling && survey.feeling != feeling) {
+      var label = happinesses[survey.feeling];
+      $("#" + label)[0].src = "img/" + label + "_black.png";
+    }
+    survey.feeling = feeling;
 
     if (survey.feeling < 2) {
       $(".happy").attr("hidden", "hidden");
@@ -46,31 +51,21 @@
     $(pageOnId).show();
   });
 
-  $("#verysad").on("mouseover", function (event) {
-    event.target.src = "img/verysad_white.png";
-  });
-  $("#verysad").on("mouseout", function (event) {
-    event.target.src = "img/verysad_black.png";
-  });
+  var happinesses = ["verysad", "littlesad", "littlehappy", "veryhappy"];
+  for (i in happinesses) {
+    var it = happinesses[i];
+    var index = new Number(i);
+    setMouseoverImages(it, index);
+  }
+  function setMouseoverImages(label, index) {
+    $("#" + label).on("mouseover", function (event) {
+      event.target.src = "img/" + label + "_white.png";
+    });
+    $("#" + label).on("mouseout", function (event) {
+      if (survey.feeling != index) {
+        event.target.src = "img/" + label + "_black.png";
+      }
+    });
+  }
 
-  $("#littlesad").on("mouseover", function (event) {
-    event.target.src = "img/littlesad_white.png";
-  });
-  $("#littlesad").on("mouseout", function (event) {
-    event.target.src = "img/littlesad_black.png";
-  });
-
-  $("#littlehappy").on("mouseover", function (event) {
-    event.target.src = "img/littlehappy_white.png";
-  });
-  $("#littlehappy").on("mouseout", function (event) {
-    event.target.src = "img/littlehappy_black.png";
-  });
-
-  $("#veryhappy").on("mouseover", function (event) {
-    event.target.src = "img/veryhappy_white.png";
-  });
-  $("#veryhappy").on("mouseout", function (event) {
-    event.target.src = "img/veryhappy_black.png";
-  });
 });
