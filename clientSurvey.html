@@ -10,61 +10,74 @@
 
 <body>
   <center><img src="img/lifeassistlogo.jpg" class="brandlogo"/></center>
-  <h1>The least invasive survey we could come up with</h1>
 
   <form role="form" class="container-fluid">
     <div id="clientId" hidden></div>
 
     <div id="date"></div>
 
-    <div class="form-group well" id="divFeeling">
-      <h2><label for="feeling">How are you feeling today?</label></h2>
-      <div>
-        <input type="radio" name="feeling" value="0"/> miserable<br/>
-        <input type="radio" name="feeling" value="1"/> a little down<br/>
-        <input type="radio" name="feeling" value="2"/> chipper<br/>
-        <input type="radio" name="feeling" value="3"/> manic<br/>
-      </div>
-    </div>
-
-    <div id="divSadList" class="sad form-group well" hidden>
-      <div>
-        <h2><label>Are you sad about</label></h2>
+    <div id="page-1">
+      <div class="form-group well" id="divFeeling">
+        <h3><label for="feeling">How are you feeling today?</label></h3>
         <div>
-          <input type="checkbox" value="family"/> family<br/>
-          <input type="checkbox" value="friends"/> friends<br/>
-          <input type="checkbox" value="carer"/> carer<br/>
-          <input type="checkbox" value="randoms"/> randoms<br/>
+          <input id="feeling_miserable" type="radio" name="feeling" value="0"/>
+          <label for="feeling_miserable">miserable</label><br/>
+          <input id="feeling_down" type="radio" name="feeling" value="1"/>
+          <label for="feeling_down">a little down</label><br/>
+          <input id="feeling_chipper" type="radio" name="feeling" value="2"/>
+          <label for="feeling_chipper">chipper</label><br/>
+          <input id="feeling_manic" type="radio" name="feeling" value="3"/>
+          <label for="feeling_manic">manic</label><br/>
         </div>
       </div>
-    </div>
 
-    <div id="divSadReason" class="sad form-group well" hidden>
-      <div>
-        <h2><label for="reason">Why?</label></h2>
-        <textarea id="reason" class="form-control" rows="3"></textarea>
+      <div id="divSadList" class="sad form-group well" hidden>
+        <div>
+          <h3><label>Are you sad about</label></h3>
+          <div>
+            <input id="sad_family" type="checkbox" value="family"/>
+            <label for="sad_family">family</label><br/>
+            <input id="sad_friends" type="checkbox" value="friends"/>
+            <label for="sad_friends">friends</label><br/>
+            <input id="sad_carer" type="checkbox" value="carer"/>
+            <label for="sad_carer">carer</label><br/>
+            <input id="sad_randoms" type="checkbox" value="randoms"/>
+            <label for="sad_randoms">randoms</label><br/>
+          </div>
+        </div>
       </div>
-    </div>
 
-    <div id="divQuestion" class="sad form-group well" hidden>
-      Have you asked....
-    </div>
-
-    <div id="divHappyComment" class="happy form-group well" hidden>
-      <div>
-        <h2><label for="comment">Comment</label></h2>
-        <textarea id="comment" class="form-control" rows="3"></textarea>
+      <div id="divHappyComment" class="happy form-group well" hidden>
+        <div>
+          <h3><label for="comment">Comment</label></h3>
+          <textarea id="comment" class="form-control" rows="3"></textarea>
+        </div>
       </div>
-    </div>
 
-    <div id="divOtherQuestion" class="other form-group">
-      <div>
-        <h2><label for="otherQuestionAnswer">How well do you feel included in your local community and why?</label></h2>
-        <textarea id="otherQuestionAnswer"  class="form-control" rows="3"></textarea>
+      <div id="divSadReason" class="sad form-group well" hidden>
+        <div>
+          <h3><label for="reason">Why?</label></h3>
+          <textarea id="reason" class="form-control" rows="3"></textarea>
+        </div>
       </div>
+
+      <input id="next-1" type="button" name="next" value="Next" hidden/>
     </div>
 
-    <input type="submit" name="name" value="Submit" class="btn btn-primary" hidden/>
+    <div id="page-2" hidden>
+      <div id="divQuestion" class="sad form-group well">
+        Have you asked....
+      </div>
+
+      <div id="divOtherQuestion" class="other form-group">
+        <div>
+          <h3><label for="otherQuestionAnswer">How included do you feel in your local community, and why?</label></h3>
+          <textarea id="otherQuestionAnswer"  class="form-control" rows="3"></textarea>
+        </div>
+      </div>
+
+      <input type="submit" name="name" value="Submit" class="btn btn-primary" hidden/>
+    </div>
   </form>
 </body>
 

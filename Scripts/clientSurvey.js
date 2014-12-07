@@ -14,27 +14,34 @@
       $(".sad").attr("hidden", "hidden");
       $("#divHappyComment").removeAttr("hidden");
     }
-  });  
+  });
 
   $("form input[type='checkbox']").on("click", function () {
     survey.sadAbout = [];
     $("form input[type='checkbox']:checked").each(function () {
-      survey.sadAbout.push($(this).val());      
+      survey.sadAbout.push($(this).val());
     });
     $("#divSadReason").removeAttr("hidden");
+    $("#next-1").removeAttr("hidden");
   });
 
   $("#reason").bind('keypress', function () {
     var reason = $(this).val();
-    if (reason.length < 10) {
-
-    } else {
+    if (reason.length >= 10) {
       survey.reason = reason;
       $("#divQuestion").removeAttr("hidden");
     }
   });
 
+  $("input[name='next']").on("click", function nextPage() {
+    var pageNumber = $(this).parent()[0].id.split("-")[1];
+    var pageOffId = '#page-' + pageNumber;
+    var pageOnId = '#page-' + (new Number(pageNumber) + 1);
+    $(pageOffId).hide();
+    $(pageOnId).show();
+  });
+
   $("form input[type='submit']").on("click", function () {
-    var submit = $(this).val();   
+    var submit = $(this).val();
   });
 });
