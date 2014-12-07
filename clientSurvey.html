@@ -1,5 +1,4 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
-
 <head>
   <title>UnitingCare lifeAssist</title>
   <script src="Scripts/jquery-2.1.1.min.js"></script>
@@ -20,10 +19,22 @@
     <div class="form-group well" id="divFeeling">
       <h2><label for="feeling">How are you feeling today?</label></h2>
       <div>
-        <input type="radio" name="feeling" value="0"/> miserable<br/>
-        <input type="radio" name="feeling" value="1"/> a little down<br/>
-        <input type="radio" name="feeling" value="2"/> chipper<br/>
-        <input type="radio" name="feeling" value="3"/> manic<br/>
+        <label>
+          <input type="radio" name="feeling" value="0" hidden />
+          <img src="img/verysad_black.png" alt="very sad" class="feeling"/>        
+        </label>        
+        <label>
+          <input type="radio" name="feeling" value="1" hidden />
+          <img src="img/littlesad_black.png" alt="little sad" width="50" height="50"/>
+        </label>
+        <label>
+          <input type="radio" name="feeling" value="2" hidden />
+          <img src="img/littlehappy_black.png" alt="little happy" width="50" height="50"/>
+        </label>
+        <label>
+          <input type="radio" name="feeling" value="3" hidden />
+          <img src="img/veryhappy_black.png" alt="very happy" width="50" height="50"/>
+        </label>
       </div>
     </div>
 
@@ -46,26 +57,12 @@
       </div>
     </div>
 
-    <div id="divQuestion" class="sad form-group well" hidden>
-      Have you asked....
-    </div>
-
     <div id="divHappyComment" class="happy form-group well" hidden>
       <div>
         <h2><label for="comment">Comment</label></h2>
         <textarea id="comment" class="form-control" rows="3"></textarea>
       </div>
     </div>
-
-    <div id="divOtherQuestion" class="other form-group">
-      <div>
-        <h2><label for="otherQuestionAnswer">How well do you feel included in your local community and why?</label></h2>
-        <textarea id="otherQuestionAnswer"  class="form-control" rows="3"></textarea>
-      </div>
-    </div>
-
-    <input type="submit" name="name" value="Submit" class="btn btn-primary" hidden/>
   </form>
 </body>
-
 </html>

@@ -13,6 +13,7 @@
     } else {
       $(".sad").attr("hidden", "hidden");
       $("#divHappyComment").removeAttr("hidden");
+      $("#divNavigation").removeAttr("hidden");
     }
   });  
 
@@ -22,19 +23,10 @@
       survey.sadAbout.push($(this).val());      
     });
     $("#divSadReason").removeAttr("hidden");
+    $("#divNavigation").removeAttr("hidden");
   });
 
-  $("#reason").bind('keypress', function () {
-    var reason = $(this).val();
-    if (reason.length < 10) {
-
-    } else {
-      survey.reason = reason;
-      $("#divQuestion").removeAttr("hidden");
-    }
-  });
-
-  $("form input[type='submit']").on("click", function () {
-    var submit = $(this).val();   
+  $("#divHappyComment").on("keypress", function () {
+    survey.happyComment = $("#comment").val();
   });
 });

@@ -1,2 +1,9 @@
+.gitignore
 .meteor/local
 .meteor/meteorite
+bin/
+obj/
+Properties/
+*.csproj
+*.user
+*.config
