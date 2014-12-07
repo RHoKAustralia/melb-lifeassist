@@ -10,10 +10,11 @@
 <body>
   <center><img src="img/lifeassistlogo.jpg" class="brandlogo"/></center>
 
-  <form role="form" class="container-fluid">
-    <div id="clientId" hidden></div>
-
-    <div id="date"></div>
+  <form role="form" class="container-fluid" method="post">
+    <input type="text" id="clientId" hidden>
+    <input type="text" id="date" hidden />
+    
+    <div id="divDate"></div>
 
     <div id="page-1">
       <div class="form-group well" id="divFeeling">
@@ -21,60 +22,77 @@
         <div>
           <label>
             <input type="radio" name="feeling" value="0" hidden />
-            <img src="img/verysad_black.png" alt="very sad" class="feeling" />
+            <img id="verysad" src="img/verysad_black.png" alt="very unhappy" title="very unhappy" class="feeling" />
           </label>
           <label>
             <input type="radio" name="feeling" value="1" hidden />
-            <img src="img/littlesad_black.png" alt="little sad" width="50" height="50" />
+            <img id="littlesad" src="img/littlesad_black.png" alt="a little unhappy" title="a little unhappy" class="feeling" />
           </label>
           <label>
             <input type="radio" name="feeling" value="2" hidden />
-            <img src="img/littlehappy_black.png" alt="little happy" width="50" height="50" />
+            <img id="littlehappy" src="img/littlehappy_black.png" alt="OK" title="OK" class="feeling" />
           </label>
           <label>
             <input type="radio" name="feeling" value="3" hidden />
-            <img src="img/veryhappy_black.png" alt="very happy" width="50" height="50" />
+            <img id="veryhappy" src="img/veryhappy_black.png" alt="very happy" title="very happy" class="feeling" />
           </label>
         </div>
       </div>
 
-      <div id="divSadList" class="sad form-group well">
+      <div id="divSadList" class="sad form-group well" hidden>
         <div>
           <h3><label>Are you sad about</label></h3>
           <div>
-            <input id="sad_family" type="checkbox" value="family" />
-            <label for="sad_family">family</label><br />
-            <input id="sad_friends" type="checkbox" value="friends" />
-            <label for="sad_friends">friends</label><br />
-            <input id="sad_carer" type="checkbox" value="carer" />
-            <label for="sad_carer">carer</label><br />
-            <input id="sad_randoms" type="checkbox" value="randoms" />
-            <label for="sad_randoms">randoms</label><br />
+            <input name="sadAbout" id="sad_physicalHealth" type="checkbox" value="physical health" />
+            <label for="sad_physicalHealth">Physical health</label><br />
+
+            <input name="sadAbout" id="sad_mentalHealth" type="checkbox" value="mental health" />
+            <label for="sad_mentalHealth">Emotional/mental health </label><br />
+
+            <input name="sadAbout" id="sad_familyOrFriends" type="checkbox" value="family or friends" />
+            <label for="sad_familyOrFriends">Your care needs and the services you receive</label><br />
+
+            <input name="sadAbout" id="sad_carer" type="checkbox" value="carer" />
+            <label for="sad_carer">Your care needs and the services you receive</label><br />
+
+            <input name="sadAbout" id="sad_community" type="checkbox" value="community" />
+            <label for="sad_community">Issues in the local community</label><br />
+
+            <input name="sadAbout" id="sad_financial" type="checkbox" value="financial" />
+            <label for="sad_financial">Financial problems</label><br />
           </div>
         </div>
       </div>
 
       <div id="divHappyComment" class="happy form-group well" hidden>
         <div>
-          <h3><label for="comment">Comment</label></h3>
+          <h3><label for="comment">That’s great. Do you have any comments about the services you’re receiving or how you’re feeling that you’d like to make?</label></h3>
           <textarea id="comment" class="form-control" rows="3"></textarea>
         </div>
       </div>
 
       <div id="divSadReason" class="sad form-group well" hidden>
         <div>
-          <h3><label for="reason">Why?</label></h3>
+          <h3><label for="reason">Could you tell us a little about why for those you’ve picked?</label></h3>
           <textarea id="reason" class="form-control" rows="3"></textarea>
         </div>
       </div>
 
-      <input id="next-1" type="button" name="next" value="Next" hidden />
+      <div id="next-1" hidden>
+        <input type="button" name="next" value="Next" class="btn btn-primary"/>
+      </div>
     </div>
 
     <div id="page-2" hidden>
-      <div id="divOtherQuestion" class="other form-group">
-        <div>
-          <h3><label for="otherQuestionAnswer">How included do you feel in your local community, and why?</label></h3>
+      <div class="well">
+        <label>Did you know that Carer’s week is coming up next month? Have you or your carer signed up for any of the free activities we’ve got planned? Talk to your partnership worker to find out more.</label>
+        <label>Summer is well and truly here! We can’t encourage you enough to make sure you’re drinking enough water – and if you live in a bushfire risk area, you’ll need to have a bushfire plan in place.</label>
+      </div>
+      <div id="divOtherQuestion" class="other form-group well">
+        <div class="form-group">
+          <h3>
+            <label for="otherQuestionAnswer">Lots of people with disabilities feel like they’re not included in society. Does that happen to you? In what ways do you feel excluded from society?</label>
+          </h3>
           <textarea id="otherQuestionAnswer" class="form-control" rows="3"></textarea>
         </div>
       </div>

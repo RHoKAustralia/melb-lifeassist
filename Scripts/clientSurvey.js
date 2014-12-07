@@ -13,7 +13,7 @@
     } else {
       $(".sad").attr("hidden", "hidden");
       $("#divHappyComment").removeAttr("hidden");
-      $("#divNavigation").removeAttr("hidden");
+      $("#next-1").removeAttr("hidden");
     }
   });
 
@@ -31,8 +31,11 @@
   });
 
   $("#reason").bind('keypress', function () {
-    var reason = $(this).val();
-    survey.reason = reason;
+    survey.reason = $(this).val();
+  });
+
+  $("#otherQuestionAnswer").bind('keypress', function () {
+    survey.otherAnswer = $(this).val();
   });
 
   $("input[name='next']").on("click", function nextPage() {
@@ -43,7 +46,31 @@
     $(pageOnId).show();
   });
 
-  $("form input[type='submit']").on("click", function () {
-    var submit = $(this).val();
+  $("#verysad").on("mouseover", function (event) {
+    event.target.src = "img/verysad_white.png";
+  });
+  $("#verysad").on("mouseout", function (event) {
+    event.target.src = "img/verysad_black.png";
+  });
+
+  $("#littlesad").on("mouseover", function (event) {
+    event.target.src = "img/littlesad_white.png";
+  });
+  $("#littlesad").on("mouseout", function (event) {
+    event.target.src = "img/littlesad_black.png";
+  });
+
+  $("#littlehappy").on("mouseover", function (event) {
+    event.target.src = "img/littlehappy_white.png";
+  });
+  $("#littlehappy").on("mouseout", function (event) {
+    event.target.src = "img/littlehappy_black.png";
+  });
+
+  $("#veryhappy").on("mouseover", function (event) {
+    event.target.src = "img/veryhappy_white.png";
+  });
+  $("#veryhappy").on("mouseout", function (event) {
+    event.target.src = "img/veryhappy_black.png";
   });
 });

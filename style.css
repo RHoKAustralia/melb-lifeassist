@@ -3,10 +3,16 @@
   text-align: center;
 }
 
+.well{
+    background-color: #e3e3e3;
+    border-color: #f5f5f5;
+}
+
 body {
   font-size: large;
 }
 
 img.feeling {
     height: 5em;
+    cursor: pointer;
 }
